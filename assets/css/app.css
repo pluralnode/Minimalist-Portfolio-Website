@@ -1,126 +1,874 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Public Sans', sans-serif;
-    font-size: 18px;
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
 }
-@media only screen and (min-width: 315px) and (max-width: 480px){
-    html, body{
-        width: 100%;
-        height: 100%;
-    }
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+body{
+    max-width: 1440px;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    overflow-x: hidden;
+}
+section.header{
+    max-width: 1111px;
+    max-height: 32px;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    top: 64px;
+    left: 65px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+a#header-logo{
+    display: block;
+    width: 60.08px;
+    height: 32px;
+}
+a#header-logo > svg{
+    position: relative;
+    top: 0px;
+    left: 0px;
+}
+div.ham-menu{
+    display: none;
+}
+ul#menu{
+    width: 302px;
+    height: 13px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+    top: 10px;
+}
+li.menu-item{
+    font-family: 'Public Sans', sans-serif;
+    text-transform: uppercase;
+    font-size: 12px;
+    line-height: 14.1px;
+    letter-spacing: 2px;
+}
+li.menu-item > a{
+    text-decoration: none;
+    color: #33323D;
+}
+section.showcase{
+    max-width: 1110px;
+    max-height: 600px;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    top: 104px;
+    left: 65px;
+}
+img#showcase-img{
+    max-width: 1110px;
+    max-height: 600px;
+    width: 100vw;
+    height: 100vh;
+}
+section.about-me-info{
+    max-width: 445px;
+    max-height: 357px;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    left: 65px;
+    bottom: -104px;
+    background-color: #fff;
+}
+div.title-box{
+    max-width: 390px;
+    max-height: 200px;
+    width: 100vw;
+    height: 100vh;
+}
+p.title-box-text{
+    font-family: 'Ibarra Real Nova', sans-serif;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 50px;
+    letter-spacing: -0.45px;
+    margin-top: 56px;
+}
+div.about-me-button{
+    max-width: 200px;
+    max-height: 48px;
+    width: 100vw;
+    height: 100vh;
+    background-color: #203A4C;
+    position: relative;
+    top: 51px;
+    left: 0px;
+    display: flex;
+    flex-direction: row;
+}
+div.btn-icon{
+    max-width: 48px;
+    max-height: 48px;
+    width: 100vw;
+    height: 100vh;
+}
+svg{
+    position: relative;
+    top: 18px;
+    left: 16px;
+}
+div.btn-text{
+    color: white;
+    text-transform: uppercase;
+    font-family: 'Public Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14.1px;
+    letter-spacing: 2px;
+    padding: 18px 0;
+    position: relative;
+    left: 48px;
+}
+section.about-me-main-page{
+    max-width: 1015px;
+    max-height: 600px;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    top: 190px;
+    left: 65px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+img#about-me-main-img{
+    max-width: 540px;
+    max-height: 600px;
+    width: 100vw;
+    height: 100vh;
+}
+div.about-me-main-info{
+    max-width: 350px;
+    max-height: 600px;
+    width: 100vw;
+    height: 100vh;
+}
+div.horizontal-rule{
+    width: 339px;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.2);
+    position: relative;
+    left: 2px;
+}
+div.horizontal-rule.second{
+    width: 339px;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.2);
+    position: relative;
+    top: 45px;
+}
+div.horizontal-rule.get-in-touch{
+    max-width: 1110px;
+    width: 100vw;
+    height: 1px;
+    position: relative;
+    left: 65px;
+    top: 144px;
+}
+div.horizontal-rule.get-in-touch.second{
+    position: relative;
+    top: 206px;
+}
+div.about-me-main-info-text{
+    max-width: 350px;
+    max-height: 502px;
+    width: 100vw;
+    height: 100vh;
+    margin-top: 50px;
+}
+p.about-me-heading{
+    font-family: 'Ibarra Real Nova', serif;
+    font-size: 40px;
+    line-height: 42px;
+    font-weight: 700;
+    letter-spacing: -0.36px;
+    color: #33323D;
+    margin-top: 50px;
+}
+p.about-me-text{
+    font-family: 'Public Sans', sans-serif;
+    font-size: 16px;
+    line-height: 30px;
+    font-weight: 400;
+    opacity: 80%;
+    color: #33323D;
+    margin-top: 28px;
+} 
+button#portfolio-btn{
+    width: 202px;
+    height: 48px;
+    border: 2px solid black;
+    color: black;
+    line-height: 14.1px;
+    letter-spacing: 2px;
+    background-color: white;
+    margin-top: 24px;
+    margin-bottom: 73px;
+}
+section.collaborate{
+    max-width: 1110px;
+    max-height: 84px;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    top: 290px;
+    left: 65px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+section.collaborate.index{
+    position: relative;
+    top: 370px;
+}
+section.collaborate.portfolio{
+    position: relative;
+    top: 600px;
+}
+section.collaborate.manage{
+    position: relative;
+    top: 490px;
+}
+section.collaborate.bookmark{
+    position: relative;
+    top: 490px;
+}
+section.collaborate.insure{
+    position: relative;
+    top: 490px;
+}
+section.collaborate.fylo{
+    position: relative;
+    top: 490px;
+}
+p.collaborate-text{
+    font-family: 'Ibarra Real Nova', serif;
+    font-size: 40px;
+    line-height: 42px;
+    font-weight: 700;
+    letter-spacing: -0.36px;
+    position: relative;
+    top: 0px; 
+    color: #33323D;
+}
+div.horizontal-rule.collaborate{
+    max-width: 534px;
+    max-height: 1px;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    top: 40px;
+    left: -30px;
+}
+button#collaborate-btn{
+    width: 162px;
+    height: 48px;
+    background-color: white;
+    border: 1px solid #000;
+    font-family: 'Public Sans', sans-serif;
+    font-size: 12px;
+    position: relative;
+    top: 15px;
+    line-height: 14.1px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+footer.main-footer{
+    max-width: 1440px;
+    max-height: 80px;
+    width: 100vw;
+    height: 100vh;
+    background-color: #33323D;
+    position: relative;
+    top: 350px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+footer.main-footer.contact{
+    position: relative;
+    top: 350px;
+}
+footer.main-footer.index{
+    position: relative;
+    top: 500px;
+}
+footer.main-footer.portfolio{
+    position: relative;
+    top: 720px;
+}
+footer.main-footer.manage{
+    position: relative;
+    top: 600px;
+}
+footer.main-footer.bookmark{
+    position: relative;
+    top: 600px;
+}
+footer.main-footer.insure{
+    position: relative;
+    top: 600px;
+}
+footer.main-footer.fylo{
+    position: relative;
+    top: 600px;
+}
+div.main-footer-info{
+    max-width: 418px;
+    max-height: 32px;
+    width: 100vw;
+    height: 100vw;
+    position: relative;
+    left: 65px;
+    top: 24px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+a#main-footer-logo-img{
+    display: block;
+    max-width: 61px;
+    max-height: 32px;
+    width: 100vw;
+    height: 100vh;
+}
+a#main-footer-logo-img > svg{
+    position: relative;
+    top: 0px;
+    left: 0px;
+}
+div.main-footer-info-links{
+    max-width: 309px;
+    max-height: 14px;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    top: 12px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+p.main-footer-info-link{
+    color: #fff;
+    font-family: 'Public Sans', sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 14.1px;
+}
+div.main-footer-logos{
+    max-width: 104px;
+    max-height: 24px;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    top: 24px;
+    right: 165px;
+}
+div.main-footer-logos > svg{
+    position: relative;
+    top: 0px;
+    left: 0px;
+    margin-right: 5px;
+}
+section.project-info{
+    max-width: 1015px;
+    max-height: 500px;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    top: 144px;
+    left: 65px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+section.project-info.more{
+    position: relative;
+    top: 244px;
+    left: 135px;
+    display: flex;
+    flex-direction: row-reverse;
+}
+section.project-info.more.extra{
+    position: relative;
+    top: 444px;
+    left: 135px;
+}
+section.project-info.more.second{
+    position: relative;
+    top: 344px;
+    left: 65px;
+    display: flex;
+    flex-direction: row;
+}
+img#project-img{
+    max-width: 540px;
+    max-height: 500px;
+    width: 100vw;
+    height: 100vh;
+}
+div.project-info-main{
+    max-width: 350px;
+    max-height: 500px;
+    width: 100vw;
+    height: 100vw;
+}
+div.project-info-text{
+    max-width: 350px;
+    max-height: 292px;
+    width: 100vw;
+    height: 100vh;
+    margin-top: 70px;
+    margin-bottom: 85px;
+}
+p.project-info-text-heading{
+    font-family: 'Ibarra Real Nova', serif;
+    font-size: 1.95em;
+    line-height: 42px;
+    font-weight: 700;
+    color: #33323D;
+    letter-spacing: -0.36px;
+    margin-top: 25px;
+}
+p.project-info-text-details{
+    font-family: 'Public Sans', sans-serif;
+    font-size: 15px;
+    color: #33323D;
+    opacity: 0.8;
+    mix-blend-mode: normal;
+    line-height: 30px;
+    margin-top: 28px;
+}
+button.project-info-text-btn{
+    width: 175px;
+    height: 48px;
+    border: 1px solid #33323D;
+    margin-top: 24px;
+    background-color: #fff;
+    text-transform: uppercase;
+    font-family: 'Public Sans', sans-serif;
+    font-size: 12px;
+    line-height: 14.1px;
+    letter-spacing: 2px;
+}
+section.project-img-section{
+    max-width: 1110px;
+    max-height: 500px;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    top: 144px;
+    left: 65px;
+}
+section.project-main-page{
+    max-width: 1110px;
+    width: 100vw;
+    height: 1192px;
+    position: relative;
+    top: 244px;
+    left: 65px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+div.project-background{
+    max-width: 635px;
+    width: 100vw;
+    height: 1192px;
+}
+div.project-main-page-tags{
+    margin-top: 23px;
+}
+p.page-tag{
+    font-family: 'Public Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 30px;
+    color: #5fb4a2;
+}
+p.project-background-text.heading{
+    font-family: 'Ibarra Real Nova', serif;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 42px;
+    letter-spacing: -0.29px;
+}
+p.project-background-text{
+    font-family: 'Public Sans', sans-serif;
+    font-size: 15px;
+    color: #33323D;
+    opacity: 80%;
+    line-height: 30px;
+    margin-top: 28px;
+}
+section.project-slider{
+    max-width: 1110px;
+    width: 100vw;
+    height: 132px;
+    position: relative;
+    top: 340px;
+    left: 65px;
+    display: flex;
+    flex-direction: row;
+}
+div.previous-project{
+    max-width: 550px;
+    width: 100vw;
+    height: 132px;
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+div.next-project{
+    max-width: 550px;
+    width: 100vw;
+    height: 132px;
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    border-left: 1px solid rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+div.previous-project-info{
+    max-width: 162px;
+    width: 100vw;
+    height: 66px;
+    margin-top: 32px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+div.next-project-info{
+    max-width: 162px;
+    width: 100vw;
+    height: 66px;
+    margin-top: 32px;
+    float: right;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+span.previous-project-btn, span.next-project-btn{
+    margin-top: 30px;
+}
+p.previous-project-name, p.next-project-name{
+    font-family: 'Ibarra Real Nova', serif;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 42px;
+    letter-spacing: -0.29px;
+    color: #33323D;
+}
+p.previous-project-tag,p.next-project-tag{
+    font-family: 'Public Sans', sans-serif;
+    font-size: 16px;
+    line-height: 30px;
+    color: #33323D;
+    opacity: 80%;
+}
+p.stats-preview-text{
+    font-family: 'Ibarra Real Nova', serif;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 42px;
+    letter-spacing: -0.29px;
+    margin-top: 20px;
+    margin-bottom: 28px;
+}
+img.stats-preview-img{
+    display: block;
+    max-width: 635px;
+    max-height: 400px;
+    width: auto;
+    height: auto;
+}
+img.stats-preview-img.second{
+    position: relative;
+    top: 20px;
+}
+section.get-in-touch{
+    max-width: 1110px;
+    width: 100vw;
+    height: 260px;
+    position: relative;
+    left: 65px;
+    top: 204px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+div.get-in-touch-details{
+    max-width: 635px;
+    width: 100vw;
+    height: 258px;
+}
+p.get-in-touch-heading{
+    font-family: 'Ibarra Real Nova', serif;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 42px;
+    color: #33323D;
+    letter-spacing: -0.36px;
+}
+p.get-in-touch-text{
+    /* margin-top: 24px; */
+    font-family: 'Public Sans', sans-serif;
+    font-size: 15px;
+    line-height: 30px;
+    opacity: 80%;
+}
+div.main-footer-logos.get-in-touch-logos{
+    position: relative;
+    left: 0px;
+}
+section.contact-me{
+    max-width: 1110px;
+    width: 100vw;
+    height: 426px;
+    position: relative;
+    left: 65px;
+    top: 250px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+p.contact-me-heading{
+    font-family: 'Ibarra Real Nova', serif;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 42px;
+    color: #33323D;
+    letter-spacing: -0.36px;
+}
+div.form{
+    max-width: 635px;
+    width: 100vw;
+    height: 426px;
+}
+form.contact-me-group{
+    display: flex;
+    flex-direction: column;  
+}
+label.form-label{
+    font-size: 13px;
+    line-height: 30px;
+    font-family: 'Public Sans', sans-serif;
+    color: #33323D;
+    font-weight: 700;
+    display: block;
+    margin-top: 24px;
+}
+input.form-input{
+    display: block;
+    margin-top: 8px;
+    max-width: 635px;
+    width: 100vw;
+    height: 48px;
+    font-size: 13px;
+    line-height: 30px;
+    background: rgba(51, 50, 61, 0.1);
+    color: #33323D;
+    padding-left: 10px;
+    border: none;
+    /* opacity: 0.1;
+    mix-blend-mode: normal; */
+}
+textarea#form-message-field{
+    max-width: 635px;
+    width: 100vw;
+    height: 96px;
+    font-size: 13px;
+    line-height: 30px;
+    background: rgba(51, 50, 61, 0.1);
+    color: #33323D;
+    padding-left: 10px;
+    border: none;
+}
+button.contact-btn{
+    margin-top: 24px;
+    width: 200px;
+    height: 48px;
+    color: #fff;
+    background: #203A4C;
+    border: none;
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) {
     section.header{
-        width: 80vw;
-        height: 32px;
+        max-width: 311px;
+        max-height: 32px;
+        width: 100vw;
+        height: 100vh;
         position: relative;
         top: 32px;
         left: 32px;
-        
-    }
-    nav{
-        width: 100%;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
     }
-    a#logo-link > svg{
+
+}
+@media only screen and (min-width: 480px) and (max-width: 960px) {
+    html, body{
+        max-width: 960px;
+        width: 100%;
+        height: 100%;
+    }
+    section.header{
+        max-width: 689px;
+        max-height: 32px;
+        width: 100vw;
+        height: 100vh;
         position: relative;
-        left: 0px;
+        top: 64px;
+        left: 39px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    a#header-logo > svg{
+        position: relative;
         top: 0px;
+        left: 0px;
     }
     div.ham-menu{
-        display: block;
-        width: 24px;
-        height: 13px;
-        position: relative;
-        top: 10px;
-    }
-    div.rect{
-        width: 100%;
-        height: 1.5px;
-        background-color: black;
-        margin: 4.8px;
-        position: relative;
-        right: 5px;
-        bottom: 5px;
-    }
-    div.rect:nth-of-type(1){
-        transform-origin: 0% 0%;
-        transition: transform 0.4s ease-in-out;
-    }
-    div.rect:nth-of-type(2){
-        transition: transform 0.2s ease-in-out;
-    }
-    div.rect:nth-of-type(3){
-        transform-origin: 0% 100%;
-        transition: transform 0.4s ease-in-out;
-    }
-    ul, li{
-        list-style-type: none;
+        display: none;
     }
     ul#menu{
-        background: #33323D;
-        width: 223px;
-        height: 186px;
-        transform: translate(-150%);
+        max-width: 309px;
+        max-height: 14px;
+        width: 100vw;
+        height: 100vh;
+        position: relative;
+        top: 8px;
         display: flex;
-        flex-direction: column;
-        transition: transform 0.5s ease-in-out;
+        flex-direction: row;
+        justify-content: space-around;
     }
-    nav input[type="checkbox"]:checked ~ ul#menu{
-        transform: translateX(0);
+    li.menu-item{
+        font-family: 'Public Sans', sans-serif;
+        text-transform: uppercase;
+        font-size: 12px;
+        line-height: 14.1px;
+        letter-spacing: 2px;
     }
-    nav input[type="checkbox"]:checked ~ div.rect:nth-of-type(1){
-        transform: rotate(35deg);
-    }
-    nav input[type="checkbox"]:checked ~ div.rect:nth-of-type(2){
-        transform: scaleY(0);
-    }
-    nav input[type="checkbox"]:checked ~ div.rect:nth-of-type(3){
-        transform: rotate(-35deg);
+    li.menu-item > a{
+        text-decoration: none;
+        color: #33323D;
     }
     section.showcase{
-        width: 100%;
-        height: 295px;
+        max-width: 688px;
+        max-height: 600px;
+        width: 100vw;
+        height: 100vh;
         position: relative;
-        top: 40px;
+        top: 97px;
+        left: 39px;
     }
-    img.showcase-img{
-        width: 80vw;
-        height: 50vh;
-        position: relative;
-        top: 40px;
-        left: 32px;
+    section.showcase > a{
+        display: block;
     }
-    section.title-box{
-        width: 80vw;
-        height: 168px;
+    img#showcase-img{
+        max-width: 688px;
+        max-height: 600px;
+        width: 100vw;
+        height: 100vh;
+    }
+    section.about-me-info{
+        max-width: 514px;
+        max-height: 278px;
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        /* bottom: -130px; */
+        top: 352px;
+        right: 248px;
+        background-color: #fff;
+    }
+    div.title-box{
+        max-width: 458px;
+        max-height: 126px;
+        width: 100vw;
+        height: 100vh;
         position: relative;
-        top: 68px;
-        left: 32px;
-        /* border: 1px solid red; */
+        top: 56px;
+
     }
     p.title-box-text{
-        font-family: 'Ibarra Real Nova', serif;
-        font-size: 1.95em;
-        line-height: 42px;
+        font-family: 'Ibarra Real Nova', sans-serif;
         font-weight: 700;
+        font-size: 40px;
+        line-height: 42px;
         letter-spacing: -0.36px;
+        color: #33323D;
     }
     div.about-me-button{
-        width: 60vw;
-        height: 48px;
+        max-width: 200px;
+        max-height: 48px;
+        width: 100vw;
+        height: 100vh;
         background-color: #203A4C;
         position: relative;
-        top: 90px;
-        left: 32px;
+        top: 104px;
         display: flex;
         flex-direction: row;
     }
     div.btn-icon{
-        width: 48px;
-        height: 48px;
+        max-width: 48px;
+        max-height: 48px;
+        width: 100vw;
+        height: 100vh;
     }
     svg{
         position: relative;
@@ -135,127 +883,63 @@
         font-weight: 400;
         line-height: 14.1px;
         letter-spacing: 2px;
+        padding: 18px 0;
         position: relative;
-        top: 18px;
         left: 48px;
     }
-    div.headshot-img{
-        width: 100vw;
-        height: 360px;
-        /* border: 1px solid red; */
-        position: relative;
-        top: 190px;
-    }
-    img#headshot-img-item{
-        width: 311px;
-        height: 346px;
-        position: relative;
-        left: 16px;
-    }
-    section.about-me-page{
-        width: 311px;
-        height: 617px;
-        border-top: 1px solid rgba(0, 0, 0, 0.2);
-        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-        position: relative;
-        top: 210px;
-        left: 16px;
-    }
-    p.about-me-heading{
-        font-family: 'Ibarra Real Nova', serif;
-        font-size: 1.95em;
-        line-height: 42px;
-        font-weight: 700;
-        letter-spacing: -0.36px;
-        position: relative;
-        top: 20px;
-    }
-    p.about-me-text{
-        font-family: 'Public Sans', sans-serif;
-        font-size: 16px;
-        line-height: 30px;
-        position: relative;
-        top: 35px;
-        font-weight: 400;
-        opacity: 80%;
-    }
-    button#portfolio-btn{
-        width: 202px;
-        height: 48px;
-        border: 2px solid black;
-        color: black;
-        line-height: 14.1px;
-        letter-spacing: 2px;
-        background-color: white;
-        position: relative;
-        top: 70px;
-    }
     section.collaborate{
-        width: 100vw;
-        height: 409px;
+        width: 689px;
+        height: 84px;
         position: relative;
-        top: 210px;
-    }
-    section.collaborate.second{
-        /* border: 1px solid red; */
-        position: relative;
-        top: 130px;
-    }
-    div.collaborate-area{
-        width: 311px;
-        height: 214px;
-        position: relative;
-        top: 75px;
-        left: 16px;
+        top: 272px;
+        left: 39px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
     }
     p.collaborate-text{
         font-family: 'Ibarra Real Nova', serif;
-        font-size: 2.35em;
+        font-size: 40px;
         line-height: 42px;
         font-weight: 700;
         letter-spacing: -0.36px; 
-        text-align: center;
-        padding: 0px 20px 20px 20px;
+        color: #33323D;
     }
-    button.collaborate-btn{
+    button#collaborate-btn{
         width: 162px;
         height: 48px;
         background-color: white;
         border: 1px solid #000;
-        /* padding: 17px 35px 17px 22px ; */
         font-family: 'Public Sans', sans-serif;
         font-size: 12px;
         line-height: 14.1px;
         letter-spacing: 2px;
         text-transform: uppercase;
-        position: relative;
-        left: 75px;
-        top: 10px;
     }
-    footer.main-footer{
-        width: 100vw;
-        height: 354px;
+    footer#main-footer{
+        width: 100%;
+        height: 80px;
         background-color: #33323D;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
         position: relative;
-        top: 170px;
-    }
-    footer.main-footer.second{
-        position: relative;
-        top: 130px;
+        top: 390px;
     }
     div.main-footer-info{
-        width: 104px;
-        height: 242px;
+        width: 418px;
+        height: 32px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
         position: relative;
-        left: 136px;
-        top: 56px;
+        top: 24px;
+        left: 39px;
     }
-    a#main-footer-logo-img{
+    div.main-footer-info > a{
         display: block;
         width: 61px;
         height: 32px;
-        position: relative;
-        left: 20px;
     }
     a#main-footer-logo-img > svg{
         position: relative;
@@ -263,20 +947,15 @@
         left: 0px;
     }
     div.main-footer-info-links{
+        width: 309px;
+        height: 14px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
         position: relative;
-        top: 40px;
-        /* width: 98px;
-        height: 108px; */
-        text-align: center;
-        width: 98px;
-        height: 106px;
+        top: 10px;
     }
     p.main-footer-info-link{
-        /* position: relative;
-        top: 10px; */
-        margin-bottom: 20px;
-    }
-    p.main-footer-info-link > a{
         color: #fff;
         font-family: 'Public Sans', sans-serif;
         font-size: 12px;
@@ -285,312 +964,16 @@
         line-height: 14.1px;
     }
     div.main-footer-logos{
-        width: 100%;
+        width: 104px;
         height: 24px;
         position: relative;
-        top: 75px;
+        top: 28px;
+        left: -40px;
+        border: 1px solid red;
     }
-    div.main-footer-logos > svg{
-        position: relative;
-        top: 0px;
-        left: 0px;
-        margin: 3.7px;
-    }
-    div.main-footer-logos.get-in-touch-logos{
-        margin-top: -50px;
-    }
-    section.project-info{
-        width: 85vw;
-        height: 688px;
-        position: relative;
-        top: 104px;
-        left: 32px;
-    }
-    section.project-info.more{
-        margin: -20px 0px;
-    }
-    img#project-img{
+    a.main-footer-logo{
         display: block;
-        max-width: 85vw;
-        max-height: 288px;
-        width: auto;
-        height: auto;
-    }
-    div.project-info-text{
-        width: 85vw;
-        height: 368px;
-        position: relative;
-        top: 32px;
-        border-top: 1px solid rgba(0, 0, 0, 0.2);
-        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-    }
-    div.project-info-text.second{
-        width: 85vw;
-        height: 452px;
-    }
-    p.project-info-text-heading{
-        font-family: 'Ibarra Real Nova', serif;
-        font-size: 1.95em;
-        line-height: 42px;
-        font-weight: 700;
-        letter-spacing: -0.36px;
-        margin-top: 25px;
-    }
-    p.project-info-text-details{
-        font-family: 'Public Sans', sans-serif;
-        font-size: 15px;
-        color: #33323D;
-        opacity: 0.8;
-        mix-blend-mode: normal;
-        line-height: 30px;
-        margin-top: 24px;
-    }
-    button.project-info-text-btn{
-        width: 175px;
-        height: 48px;
-        border: 1px solid #33323D;
-        margin-top: 24px;
-        background-color: #fff;
-        text-transform: uppercase;
-        font-family: 'Public Sans', sans-serif;
-        font-size: 12px;
-        line-height: 14.1px;
-        letter-spacing: 2px;
-    }
-    button.project-info-text-btn.project-info-page-btn{
-        width: 178px;
-        height: 48px;
-        position: relative;
-        top: 24px;
-    }
-    section.project-main-page{
-        width: 85vw;
-        height: 632px;
-        position: relative;
-        top: 104px;
-        left: 32px;
-    }
-    img#project-main-img{
-        display: block;
-        max-width: 311px;
-        max-height: 140px;
-        width: auto;
-        height: auto;
-    }
-    div.project-main-page-tags{
-        width: 85vw;
-        height: 60px;
-        position: relative;
-        top: 24px;
-    }
-    p.page-tag{
-        font-family: 'Public Sans', sans-serif;
-        font-size: 13px;
-        font-weight: 700;
-        line-height: 30px;
-        color: #5fb4a2;
-    }
-    section.project-background{
-        width: 85vw;
-        height: 400px;
-        position: relative;
-        top: 138px;
-        left: 32px;
-    }
-    p.project-background-text{
-        font-family: 'Public Sans', sans-serif;
-        font-size: 15px;
-        line-height: 30px;
-    }
-    p.project-background-text.heading{
-        font-family: 'Ibarra Real Nova', serif;
-        font-weight: 400;
-        font-size: 32px;
-        line-height: 42px;
-        letter-spacing: -0.29px;
-        margin: 0px 0px 15px 0px;
-    }
-    section.stats-preview{
-        width: 85vw;
-        height: 540px;
-        position: relative;
-        top: 180px;
-        left: 32px;
-        /* border: 1px solid red; */
-    }
-    p.stats-preview-text{
-        font-family: 'Ibarra Real Nova', serif;
-        font-weight: 400;
-        font-size: 32px;
-        line-height: 42px;
-        letter-spacing: -0.29px;
-        /* margin: 0px 0px 15px 0px; */
-    }
-    img.stats-preview-img{
-        display: block;
-        max-width: 313px;
-        max-height: 197px;
-        width: auto;
-        height: auto;
-        position: relative;
-        top: 40px;
-    }
-    img.stats-preview-img.second{
-        position: relative;
-        top: 70px;
-    }
-    section.project-slider{
-        width: 326px;
-        height: 148px;
-        position: relative;
-        top: 174px;
-        left: 32px;
-        display: grid;
-        grid-template-columns: auto auto;
-    }
-    div.previous{
-        border-top: 1px solid rgba(0, 0, 0, 0.2);
-        border-right: 1px solid rgba(0, 0, 0, 0.2);
-        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-    }
-    div.next{
-        border-top: 1px solid rgba(0, 0, 0, 0.2);
-        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-    }
-    div.previous-slider{
-        width: 122px;
-        height: 98px;
-        position: relative;
-        top: 14px;
-    }
-    div.previous-slider > p{
-        position: relative;
-        top: 25px;
-        left: 15px;
-    }
-    p.previous-text-heading{
-        font-family: 'Ibarra Real Nova', serif;
-        font-weight: 400;
-        font-size: 32px; 
-        line-height: 36px;
-        letter-spacing: -0.29px;
-        color: #33323D;
-    }
-    p.previous-text-highlight{
-        font-family: 'Public Sans', sans-serif;
-        font-size: 16px;
-        line-height: 30px;
-        color: #33323D;
-        opacity: 0.5;
-        mix-blend-mode: normal;
-    }
-    p.previous-text-highlight.second{
-        /* padding-left: 40px; */
-    }
-    div.next-slider{
-        width: 138px;
-        height: 98px;
-        position: relative;
-        top: 14px;
-    }
-    div.next-slider > p{
-        position: relative;
-        top: 25px;
-        left: 24px;
-    }
-    div.next-slider > svg{
-        position: relative;
-        left: 135px;
-    }
-    div.horizontal-rule{
-        width: 85vw;
-        height: 1px;
-        position: relative;
-        top: 70px;
-        left: 32px;
-        background-color: rgba(0, 0, 0, 0.2);
-    }
-    section.get-in-touch{
-        width: 85vw;
-        height: 506px;
-        position: relative;
-        top: 100px;
-        left: 32px;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-    }
-    p.get-in-touch-heading{
-        font-family: 'Ibarra Real Nova', serif;
-        font-size: 40px;
-        font-weight: 700;
-        line-height: 42px;
-        color: #33323D;
-        letter-spacing: -0.36px;
-    }
-    p.get-in-touch-text{
-        margin-top: 24px;
-        font-family: 'Public Sans', sans-serif;
-        font-size: 15px;
-        line-height: 30px;
-        opacity: 80%;
-    }
-    section.contact-me{
-        width: 85vw;
-        height: 492px;
-        position: relative;
-        top: 140px;
-        left: 32px;
-        /* border: 1px solid red; */
-    }
-    p.contact-me-heading{
-        font-family: 'Ibarra Real Nova', serif;
-        font-size: 40px;
-        font-weight: 700;
-        line-height: 42px;
-        color: #33323D;
-        letter-spacing: -0.36px;
-    }
-    form.contact-me-group{
-        margin-top: 15px;   
-    }
-    label.form-label{
-        font-size: 13px;
-        line-height: 30px;
-        font-family: 'Public Sans', sans-serif;
-        color: #33323D;
-        font-weight: 700;
-        display: block;
-        margin-top: 24px;
-    }
-    input.form-input{
-        display: block;
-        margin-top: 8px;
-        width: 85vw;
-        height: 48px;
-        font-size: 13px;
-        line-height: 30px;
-        background: rgba(51, 50, 61, 0.1);
-        color: #33323D;
-        padding-left: 10px;
-        border: none;
-        /* opacity: 0.1;
-        mix-blend-mode: normal; */
-    }
-    textarea#form-message-field{
-        width: 85vw;
-        height: 96px;
-        font-size: 13px;
-        line-height: 30px;
-        background: rgba(51, 50, 61, 0.1);
-        color: #33323D;
-        padding-left: 10px;
-        border: none;
-    }
-    button.contact-btn{
-        margin-top: 24px;
-        width: 200px;
-        height: 48px;
-        color: #fff;
-        background: #33323D;
-        border: none;
+        width: 24px;
+        height: 24px;
     }
 }
